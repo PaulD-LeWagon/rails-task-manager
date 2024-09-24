@@ -1,0 +1,14 @@
+<h1><%= @message %></h1>
+
+<form id="todo-list" class="" action="" method="">
+
+  <% @tasks.each do |task| %>
+  <div class="form-item d-flex">
+    <input type="checkbox" name="todo-item" disabled="true"<%= task.done == true ? 'checked' : '' %>>
+    <span><%= link_to task.title, task_path(task) %></span>
+  </div>
+  <% end %>
+
+</form>
+
+<%= link_to " + Add new task", tasks_new_path %>
